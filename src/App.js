@@ -7,6 +7,8 @@ import  SingleRoom  from "./pages/single.js";
 import Error from "./pages/error.js";
 import Navbar from "./components/Navbar.js";
 function App(){ 
+  
+
   return (
     <>
     <Navbar />

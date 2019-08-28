@@ -11,3 +11,4 @@ export default function Banner({children,title,subtitle})
         </div>
     )
 }
+

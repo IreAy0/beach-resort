@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Hero = ({Children, hero}) => {
+const Hero = ({children, hero}) => {
   return (
     <header className={hero}>
-      {Children}
+      {children}
     </header>
   )
 }
