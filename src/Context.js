@@ -9,7 +9,6 @@ state={
     featuredRooms:[],
     loading:true
 };
-
 componentDidMount(){
     let rooms = this.formatData(items);
    
@@ -32,7 +31,11 @@ return room;
 return tempItems
 }
 
-
+getRoom = slug => {
+    let tempRooms ={...this.state.rooms};
+    const room = tempRooms.find(room => room.slug === slug);
+    return room;
+};
 
 
 
@@ -43,7 +46,7 @@ return tempItems
 
     render() {
         return (
-           <RoomContext.Provider value={{...this.state}}>
+           <RoomContext.Provider value={{...this.state, getRoom: this.getRoom}}>
                 {this.props.children}
            </RoomContext.Provider>
         )
