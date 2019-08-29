@@ -76,6 +76,7 @@ export default class single extends Component {
                          } )}
                     </ul>
                 </section>
+                
             </>
         ); 
     }
