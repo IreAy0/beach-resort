@@ -36,7 +36,7 @@ const RoomContext = React.createContext();
         const room = tempRooms.find(room => room.slug === slug);
         return room;
     };
-    
+
   render() {
         return (
            <RoomContext.Provider value={{...this.state, getRoom: this.getRoom}}>
@@ -47,5 +47,16 @@ const RoomContext = React.createContext();
 }
 
 const RoomConsumer  = RoomContext.Consumer;
+
+export function withRoomConsumer(Component){
+    return function ConsumerWrapper(props) {
+        return<RoomConsumer>
+            {value => <Component {...props} context={value}/>}
+        </RoomConsumer>
+    }
+}
+
+
+
 
 export { RoomProvider, RoomConsumer, RoomContext}
